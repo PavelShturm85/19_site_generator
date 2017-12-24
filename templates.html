@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <title>Список тем</title>
+    <!-- Bootstrap -->
+    <link rel='stylesheet' href='bootstrap/css/bootstrap.min.css' type='text/css' media='all'>
+  </head>
+  <body>
+      <div class="row">
+        <div class="col-sm-0"></div>
+        <div class="col-sm-3 panel panel-primary text-left">
+          <div class="panel-body text-center lead">Список тем</div>
+          <div class="panel-footer text-justify">
+            <div class="btn-group-vertical">
+              {% for article in articles %}
+                <div class="field">
+                  <button name="write" type="button" class="j-submit-report btn btn-default btn-block" onclick="window.location.href='{{ article['source'].split('/').pop().rsplit('.', 1)[0].replace(' ', '_').replace('%', '').replace('$', '').
+                        replace('@', '').replace('*', '').replace('!', '').replace('&', '').replace(';', '') }}.html'">{{ article['title'] | escape() }}</button>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8 panel panel-primary">
+          <div id="content" class="panel-body text-center lead">{{ title | escape() }}</div>
+          <br>
+          <div id="footer" class="panel-footer text-justify">{{ markdown_text }}</div>
+          <br>
+       </div>
+       <div class="col-sm-1"></div>
+      </div>
+  </body>
+</html>
