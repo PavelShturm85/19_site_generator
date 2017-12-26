@@ -15,7 +15,8 @@ pip install -r requirements.txt # alternatively try pip3
 # Quickstart
 **Ways to use:**
 - Have to use  module `site_generator.py` after `python3`.
-  - This is create site in path `/pages`
+  - This is create site in path `/site`
+  - After make change in `template.html` or `/articles/`,site auto recreate.
 
 
 Example of script launch on Linux, Python 3.5:
@@ -23,6 +24,9 @@ Example of script launch on Linux, Python 3.5:
 
 ```bash
 $ python3 site_generator.py
+[I 171225 19:38:27 server:283] Serving on http://127.0.0.1:5500
+[I 171225 19:38:27 handlers:60] Start watching changes
+[I 171225 19:38:27 handlers:62] Start detecting changes
 
 ```
 
