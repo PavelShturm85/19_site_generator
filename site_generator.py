@@ -15,7 +15,7 @@ def create_pages():
             replace(' ', '_').replace('%', '').replace('$', '').\
             replace('@', '').replace('*', '').replace('!', '').\
             replace('&', '').replace(';', '')
-        path_html = 'site/' + file_name + '.html'
+        path_html = 'pages/' + file_name + '.html'
         with open(path_html, 'w') as html:
             with open('articles/' + article['source'], 'r') as markdown_file:
                 markdown_html = markdown.markdown(markdown_file.read())
@@ -32,4 +32,4 @@ if __name__ == '__main__':
     create_pages()
     server.watch('templates.html', create_pages)
     server.watch('articles/', create_pages)
-    server.serve(root='site/')
+    server.serve(root='pages/')
