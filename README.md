@@ -15,7 +15,7 @@ pip install -r requirements.txt # alternatively try pip3
 # Quickstart
 **Ways to use:**
 - Have to use  module `site_generator.py` after `python3`.
-  - This is create site in path `/site`
+  - This is create site in path `/pages`
   - After make change in `template.html` or `/articles/`,site auto recreate.
 
 
