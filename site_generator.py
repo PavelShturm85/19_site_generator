@@ -15,7 +15,7 @@ def create_pages():
             replace(' ', '_').replace('%', '').replace('$', '').\
             replace('@', '').replace('*', '').replace('!', '').\
             replace('&', '').replace(';', '')
-        path_html = 'pages/' + file_name + '.html'
+        path_html = file_name + '.html'
         with open(path_html, 'w') as html:
             with open('articles/' + article['source'], 'r') as markdown_file:
                 markdown_html = markdown.markdown(markdown_file.read())
